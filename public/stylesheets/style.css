@@ -1,8 +1,32 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 a {
-  color: #00B7FF;
+    color: #00B7FF;
+}
+.calcBtnRow {
+    height: 100px;
+    width: 100px;
+}
+.calcBtn {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border-color: green;
+    font-size: 50px;
+}
+.calcOp {
+    height: 100px;
+    width: 100px;
+    background-color: black;
+    border-color: yellow;
+}
+.calcBottom {
+    width: 310px;
+    height: 50px;
+}
+#calcScreen {
+    height: 100px;
+    padding-top: 2px;
 }
