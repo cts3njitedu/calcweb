@@ -11,20 +11,21 @@ a {
 }
 .calcBtn {
     height: 100px;
-    width: 100px;
+    width: 125px;
     background-color: black;
     border-color: green;
     font-size: 50px;
 }
 .calcOp {
     height: 100px;
-    width: 100px;
+    width: 125px;
     background-color: black;
     border-color: yellow;
 }
 .calcBottom {
-    width: 310px;
+ 
     height: 100px;
+    width: 375px;
 }
 #calcScreen {
     height: 100px;
