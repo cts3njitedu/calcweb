@@ -1,6 +1,8 @@
 var app = angular.module('CalcApp', []);
+
 app.controller('myCtrl', function ($scope,$http) {
     $scope.expression = "";
+    $scope.prevExpression = "";
 
     $scope.updateExpression = function (element) {
 
@@ -39,6 +41,7 @@ app.controller('myCtrl', function ($scope,$http) {
         }).then(function (response) {
             
 
+            $scope.prevExpression = $scope.expression;
             $scope.expression = response.data.result;
             console.log(response.data);
         },function(error){

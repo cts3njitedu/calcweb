@@ -2,14 +2,14 @@
 <html lang="en-US">
 
 <head>
-     <link rel="stylesheet" href="stylesheets/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="stylesheets/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="stylesheets/style.css" />
     <script src="../public/javascripts/angular/angular.js"></script>
     <script src="../public/javascripts/calculator.js"></script>
 </head>
 
 <body ng-app="CalcApp">
-    
+
 
     <div class="jumbotron text-center">
         <h1>Craig's Comprehensive Calculator</h1>
@@ -17,12 +17,12 @@
 
 
 
-    <div class="container">
+    <div class="container" ng-controller="myCtrl">
         <div class="row">
             <div class="col-sm-2">
 
             </div>
-            <div class="col-sm-8" ng-controller="myCtrl">
+            <div class="col-sm-8">
 
                 <table class="table-bordered">
 
@@ -35,26 +35,26 @@
                     <tr>
                         <td class="calcBtnRow">
 
-                            <button type="button" value = "7" class="btn btn-primary btn-lg calcBtn"  ng-click="updateExpression($event)">7</button>
+                            <button type="button" value="7" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">7</button>
 
                         </td>
                         <td class="calcBtnRow">
 
-                            <button type="button" value = "8" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">8</button>
+                            <button type="button" value="8" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">8</button>
 
                         </td>
                         <td class="calcBtnRow">
 
-                            <button type="button" value = "9" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">9</button>
+                            <button type="button" value="9" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">9</button>
                         </td>
                         <td>
-                            <button type="button" value = "+" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">+</button>
+                            <button type="button" value="+" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">+</button>
                         </td>
                         <td>
-                            <button type="button" value = "*" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">*</button>
+                            <button type="button" value="*" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">*</button>
                         </td>
                         <td>
-                            <button type="button" value = "%" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">%</button>
+                            <button type="button" value="%" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">%</button>
                         </td>
 
 
@@ -63,26 +63,26 @@
                     <tr>
                         <td class="calcBtnRow">
 
-                            <button type="button" value = "4" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">4</button>
+                            <button type="button" value="4" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">4</button>
 
                         </td>
                         <td class="calcBtnRow">
 
-                            <button type="button" value = "5" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">5</button>
+                            <button type="button" value="5" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">5</button>
 
                         </td>
                         <td class="calcBtnRow">
 
-                            <button type="button" value = "6" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">6</button>
+                            <button type="button" value="6" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">6</button>
                         </td>
                         <td>
-                            <button type="button" value = "-" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">-</button>
+                            <button type="button" value="-" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">-</button>
                         </td>
                         <td>
-                            <button type="button" value = "/" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">/</button>
+                            <button type="button" value="/" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">/</button>
                         </td>
                         <td>
-                            <button type="button" value = "^" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">^</button>
+                            <button type="button" value="^" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">^</button>
                         </td>
 
 
@@ -92,23 +92,23 @@
                     <tr>
                         <td class="calcBtnRow">
 
-                            <button type="button" value = "1" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">1</button>
+                            <button type="button" value="1" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">1</button>
 
                         </td>
                         <td class="calcBtnRow">
 
-                            <button type="button" value = "2" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">2</button>
+                            <button type="button" value="2" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">2</button>
 
                         </td>
                         <td class="calcBtnRow">
 
-                            <button type="button" value = "3" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">3</button>
+                            <button type="button" value="3" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">3</button>
                         </td>
                         <td>
-                            <button type="button" value = "(" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">(</button>
+                            <button type="button" value="(" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">(</button>
                         </td>
                         <td>
-                            <button type="button" value = ")" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">)</button>
+                            <button type="button" value=")" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">)</button>
                         </td>
                         <td>
                             <button type="button" class="btn btn-primary btn-lg calcOp" ng-click="backExpression()">DEL</button>
@@ -134,7 +134,21 @@
                 </table>
             </div>
         </div>
+        <div class="row">
+            <div class="col-sm-2">
+
+            </div>
+            <div class="col-sm-8">
+                Previous Expression: {{prevExpression}}
+
+            </div>
+
+
+
+        </div>
     </div>
+
+
 
 </body>
 
