@@ -1,126 +1,133 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<script src="javascripts/angular/angular.js"></script>
-<link rel="stylesheet" href="stylesheets/bootstrap/bootstrap.min.css" />
-<link rel="stylesheet" href="stylesheets/style.css" />
 
-<body>
+<head>
+     <link rel="stylesheet" href="stylesheets/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <script src="../public/javascripts/angular/angular.js"></script>
+    <script src="../public/javascripts/calculator.js"></script>
+</head>
 
-    <!--<div ng-app="">
-  <p>Name : <input type="text" ng-model="name"></p>
-  <h1>Hello {{name}}</h1>
-</div>-->
+<body ng-app="CalcApp">
+    
+
     <div class="jumbotron text-center">
         <h1>Craig's Comprehensive Calculator</h1>
     </div>
+
+
+
     <div class="container">
         <div class="row">
             <div class="col-sm-2">
 
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-8" ng-controller="myCtrl">
+
                 <table class="table-bordered">
-                
-
-                        <tr>
-                            <td colspan="6"><input type="text" class="form-control" id="calcScreen"  style="font-size:70px;"></td>
-                        </tr>
-                        <tr>
-                            <td class="calcBtnRow">
-
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">7</button>
-
-                            </td>
-                            <td class="calcBtnRow">
-
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">8</button>
-
-                            </td>
-                            <td class="calcBtnRow">
-
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">9</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">+</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">*</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">%</button>
-                            </td>
 
 
+                    <tr>
+                        <td colspan="6">
+                            <input ng-model="expression" type="text" class="form-control" id="calcScreen" style="font-size:70px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="calcBtnRow">
 
-                        </tr>
-                        <tr>
-                            <td class="calcBtnRow">
+                            <button type="button" value = "7" class="btn btn-primary btn-lg calcBtn"  ng-click="updateExpression($event)">7</button>
 
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">4</button>
+                        </td>
+                        <td class="calcBtnRow">
 
-                            </td>
-                            <td class="calcBtnRow">
+                            <button type="button" value = "8" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">8</button>
 
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">5</button>
+                        </td>
+                        <td class="calcBtnRow">
 
-                            </td>
-                            <td class="calcBtnRow">
-
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">6</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">-</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">/</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">^</button>
-                            </td>
+                            <button type="button" value = "9" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">9</button>
+                        </td>
+                        <td>
+                            <button type="button" value = "+" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">+</button>
+                        </td>
+                        <td>
+                            <button type="button" value = "*" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">*</button>
+                        </td>
+                        <td>
+                            <button type="button" value = "%" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">%</button>
+                        </td>
 
 
 
+                    </tr>
+                    <tr>
+                        <td class="calcBtnRow">
 
-                        </tr>
-                        <tr>
-                            <td class="calcBtnRow">
+                            <button type="button" value = "4" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">4</button>
 
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">1</button>
+                        </td>
+                        <td class="calcBtnRow">
 
-                            </td>
-                            <td class="calcBtnRow">
+                            <button type="button" value = "5" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">5</button>
 
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">2</button>
+                        </td>
+                        <td class="calcBtnRow">
 
-                            </td>
-                            <td class="calcBtnRow">
-
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">3</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">(</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-lg calcBtn">)</button>
-                            </td>
-                            <td>
-                                <button type="button" class="btn btn-primary btn-lg calcOp">DEL</button>
-                            </td>
-
-
-                        </tr>
-                        <tr>
-                            <td colspan="3">
-                                <button type="button" class="btn btn-primary btn-lg calcBottom">CLEAR</button>
-
-                            </td>
-
-                            <td colspan="3">
-                                <button type="button" class="btn btn-primary btn-lg calcBottom">ENTER</button>
-                            </td>
+                            <button type="button" value = "6" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">6</button>
+                        </td>
+                        <td>
+                            <button type="button" value = "-" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">-</button>
+                        </td>
+                        <td>
+                            <button type="button" value = "/" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">/</button>
+                        </td>
+                        <td>
+                            <button type="button" value = "^" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">^</button>
+                        </td>
 
 
-                        </tr>
+
+
+                    </tr>
+                    <tr>
+                        <td class="calcBtnRow">
+
+                            <button type="button" value = "1" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">1</button>
+
+                        </td>
+                        <td class="calcBtnRow">
+
+                            <button type="button" value = "2" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">2</button>
+
+                        </td>
+                        <td class="calcBtnRow">
+
+                            <button type="button" value = "3" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">3</button>
+                        </td>
+                        <td>
+                            <button type="button" value = "(" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">(</button>
+                        </td>
+                        <td>
+                            <button type="button" value = ")" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">)</button>
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-lg calcOp" ng-click="backExpression()">DEL</button>
+                        </td>
+
+
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <button type="button" class="btn btn-primary btn-lg calcBottom" ng-click="clearExpression()">CLEAR</button>
+
+                        </td>
+
+                        <td colspan="3">
+                            <button type="button" class="btn btn-primary btn-lg calcBottom" ng-click="sendExpression()">ENTER</button>
+                        </td>
+
+
+                    </tr>
 
 
 
