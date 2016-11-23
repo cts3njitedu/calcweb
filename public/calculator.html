@@ -117,8 +117,18 @@
 
                     </tr>
                     <tr>
-                        <td colspan="3">
-                            <button type="button" class="btn btn-primary btn-lg calcBottom" ng-click="clearExpression()">CLEAR</button>
+                        <td class="calcBtnRow">
+
+                            <button type="button" value="0" class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">0</button>
+
+                        </td>
+                        <td class="calcBtnRow">
+
+                            <button type="button" value="." class="btn btn-primary btn-lg calcBtn" ng-click="updateExpression($event)">.</button>
+
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-lg calcOp" ng-click="clearExpression()">CLR</button>
 
                         </td>
 
