@@ -1,13 +1,15 @@
 var app = angular.module('CalcApp', []);
 
-app.controller('myCtrl', function ($scope,$http) {
+app.controller('myCtrl', function ($scope, $http) {
     $scope.expression = "";
     $scope.prevExpression = "";
 
     $scope.currAnswer = "";
-   
-    $scope.answerValue = function(){
-        
+
+    $scope.answerValue = function () {
+        if ($scope.currAnswer.length === 0) {
+            $scope.currAnswer = "0";
+        }
         $scope.expression = $scope.expression + "ANS";
     }
     $scope.updateExpression = function (element) {
@@ -28,8 +30,8 @@ app.controller('myCtrl', function ($scope,$http) {
         $scope.expression = "";
     }
     $scope.sendExpression = function () {
-        
-        var expr = $scope.expression.replace(/ANS/g,$scope.currAnswer);
+
+        var expr = $scope.expression.replace(/ANS/g, $scope.currAnswer);
         var result = {
 
             expression: expr
@@ -47,14 +49,14 @@ app.controller('myCtrl', function ($scope,$http) {
 
 
         }).then(function (response) {
-            
+
 
             $scope.prevExpression = expr;
             $scope.expression = response.data.result;
-            $scope.currAnswer = $scope.expression; 
+            $scope.currAnswer = $scope.expression;
             console.log(response.data);
-        },function(error){
-            
+        }, function (error) {
+
 
         })
 

@@ -31,3 +31,6 @@ a {
     height: 100px;
     padding-top: 2px;
 }
+input {
+    text-align:right;
+}
