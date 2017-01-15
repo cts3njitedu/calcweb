@@ -4,6 +4,12 @@ app.controller('myCtrl', function ($scope,$http) {
     $scope.expression = "";
     $scope.prevExpression = "";
 
+    $scope.currAnswer = "";
+   
+    $scope.answerValue = function(){
+        
+        $scope.expression = $scope.expression + "ANS";
+    }
     $scope.updateExpression = function (element) {
 
         $scope.expression = $scope.expression + element.target.value;
@@ -22,9 +28,11 @@ app.controller('myCtrl', function ($scope,$http) {
         $scope.expression = "";
     }
     $scope.sendExpression = function () {
+        
+        var expr = $scope.expression.replace(/ANS/g,$scope.currAnswer);
         var result = {
 
-            expression: $scope.expression
+            expression: expr
         }
         $http.post('/calc', result, {
 
@@ -41,8 +49,9 @@ app.controller('myCtrl', function ($scope,$http) {
         }).then(function (response) {
             
 
-            $scope.prevExpression = $scope.expression;
+            $scope.prevExpression = expr;
             $scope.expression = response.data.result;
+            $scope.currAnswer = $scope.expression; 
             console.log(response.data);
         },function(error){
             

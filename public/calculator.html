@@ -17,11 +17,19 @@
 
 
 
+
     <div class="container" ng-controller="myCtrl">
-        <div class="row">
+        <div>
             <div class="col-sm-2">
+                <p>ANS={{currAnswer}}</p>
 
             </div>
+
+
+
+        </div>
+        <div class="row">
+
             <div class="col-sm-8">
 
                 <table class="table-bordered table-responsive">
@@ -131,6 +139,9 @@
                             <button type="button" class="btn btn-primary btn-lg calcOp" ng-click="clearExpression()">CLR</button>
 
                         </td>
+                        <td>
+                            <button type="button" class="btn btn-primary btn-lg calcOp" ng-click="answerValue()">ANS</button>
+                        </td>
 
                         <td colspan="3">
                             <button type="button" class="btn btn-primary btn-lg calcBottom" ng-click="sendExpression()">ENTER</button>
@@ -146,10 +157,10 @@
         </div>
         <div class="row">
             <div class="col-sm-2">
-
+                <!--<p>Previous Expression:{{prevExpression}}</p>-->
             </div>
             <div class="col-sm-8">
-                Previous Expression: {{prevExpression}}
+
 
             </div>
 
